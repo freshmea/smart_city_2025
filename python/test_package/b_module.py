@@ -1,0 +1,1 @@
+b_var = "b_module 변수입니다."

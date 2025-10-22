@@ -1,0 +1,1 @@
+print("test_package가 임포트 되었습니다.")
