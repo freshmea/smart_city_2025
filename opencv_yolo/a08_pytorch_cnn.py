@@ -13,7 +13,9 @@ from torch import optim
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
-from tqdm import tqdm_notebook as tqdm
+
+# from tqdm import tqdm_notebook as tqdm
+from tqdm import tqdm
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
@@ -154,9 +156,9 @@ print(inputs.size())
 print(label)
 
 # pip install torchsummary
-from torchsummary import summary
+# from torchsummary import summary
 
-summary(model, input_size=(3, 224, 224))
+# summary(model, input_size=(3, 224, 224))
 
 # 파라미터 보기.
 def count_parameters(model):
