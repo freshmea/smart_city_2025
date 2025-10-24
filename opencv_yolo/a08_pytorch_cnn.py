@@ -224,5 +224,5 @@ def train_model(model, dataloader_dict, criterion, optimizer, num_epoch):
 
 import time
 
-num_epoch = 10
+num_epoch = 100
 model = train_model(model, dataloader_dict, criterion, optimizer, num_epoch)
