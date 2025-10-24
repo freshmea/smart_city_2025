@@ -69,3 +69,19 @@ class LeNet(nn.Module):
 model = LeNet()
 print(model)
 
+cat_directory = r'data/Cat/'
+dog_directory = r'data/Dog/'
+
+cat_images_filepaths = sorted([os.path.join(cat_directory, f) for f in os.listdir(cat_directory)])
+dog_images_filepaths = sorted([os.path.join(dog_directory, f) for f in os.listdir(dog_directory)])
+images_filepaths = [*cat_images_filepaths, *dog_images_filepaths]
+correct_images_filepaths = [i for i in images_filepaths if cv2.imread(i) is not None]
+
+random.seed(42)
+random.shuffle(correct_images_filepaths)
+#train_images_filepaths = correct_images_filepaths[:20000] #성능을 향상시키고 싶다면 훈련 데이터셋을 늘려서 테스트해보세요
+#val_images_filepaths = correct_images_filepaths[20000:-10] #훈련과 함께 검증도 늘려줘야 합니다
+train_images_filepaths = correct_images_filepaths[:400]
+val_images_filepaths = correct_images_filepaths[400:-10]
+test_images_filepaths = correct_images_filepaths[-10:]
+print(len(train_images_filepaths), len(val_images_filepaths), len(test_images_filepaths))
