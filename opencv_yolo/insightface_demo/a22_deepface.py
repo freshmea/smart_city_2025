@@ -9,9 +9,9 @@ from insightface.model_zoo import get_model
 
 # --- 설정 (Configuration) ---
 # 기준이 되는 사람의 이미지 경로
-REFERENCE_IMAGE_PATH = 'data/face/06.jpg'
+REFERENCE_IMAGE_PATH = '/home/aa/smart_city_2025/data/face/13.jpg'
 # 비디오 캡처 장치 ID (웹캠: 0, 1, ... 또는 동영상 파일 경로)
-CAMERA_ID = 4
+CAMERA_ID = 0
 # 얼굴 인식을 위한 유사도 임계값
 SIMILARITY_THRESHOLD = 0.3
 # 로그를 저장할 파일 경로
@@ -142,6 +142,7 @@ def main():
         return
 
     cap = cv2.VideoCapture(CAMERA_ID)
+    cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
     if not cap.isOpened():
         print(f"오류: 카메라({CAMERA_ID})를 열 수 없습니다.")
         return
