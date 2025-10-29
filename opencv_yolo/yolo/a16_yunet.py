@@ -78,6 +78,7 @@ def visualize(image, results, box_color=(0, 255, 0), text_color=(0, 0, 255), fps
 
     return output
 
+
 if __name__ == '__main__':
     backend_id = backend_target_pairs[args.backend_target][0]
     target_id = backend_target_pairs[args.backend_target][1]

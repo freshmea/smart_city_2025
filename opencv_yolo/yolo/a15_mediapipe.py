@@ -27,7 +27,7 @@ parser.add_argument('--input', '-i', type=str,
                     help='Path to the input image. Omit for using default camera.')
 parser.add_argument('--model', '-m', type=str, default='/home/aa/smart_city_2025/data/handpose_estimation_mediapipe_2023feb.onnx',
                     help='Path to the model.')
-parser.add_argument('--backend_target', '-bt', type=int, default=0,
+parser.add_argument('--backend_target', '-bt', type=int, default=1,
                     help='''Choose one of the backend-target pair to run this demo:
                         {:d}: (default) OpenCV implementation + CPU,
                         {:d}: CUDA + GPU (CUDA),
