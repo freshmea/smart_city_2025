@@ -4,6 +4,7 @@
 # Copyright (C) 2021, Shenzhen Institute of Artificial Intelligence and Robotics for Society, all rights reserved.
 # Third party copyrights are property of their respective owners.
 
+# uv add onnxruntime-gpu
 import argparse
 
 import cv2 as cv
@@ -30,7 +31,7 @@ backend_target_pairs = [
 parser = argparse.ArgumentParser(description='YuNet: A Fast and Accurate CNN-based Face Detector (https://github.com/ShiqiYu/libfacedetection).')
 parser.add_argument('--input', '-i', type=str,
                     help='Usage: Set input to a certain image, omit if using camera.')
-parser.add_argument('--model', '-m', type=str, default='data/face_detection_yunet_2023mar.onnx',
+parser.add_argument('--model', '-m', type=str, default='/home/aa/smart_city_2025/data/face_detection_yunet_2023mar.onnx',
                     help="Usage: Set model type, defaults to 'face_detection_yunet_2023mar.onnx'.")
 parser.add_argument('--backend_target', '-bt', type=int, default=0,
                     help='''Choose one of the backend-target pair to run this demo:
@@ -122,8 +123,9 @@ if __name__ == '__main__':
             cv.imshow(args.input, image)
             cv.waitKey(0)
     else: # Omit input to call default camera
-        deviceId = 4
+        deviceId = 0
         cap = cv.VideoCapture(deviceId)
+        cap.set(cv.CAP_PROP_FOURCC, cv.VideoWriter_fourcc(*'MJPG'))
         w = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
         h = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
         model.setInputSize([w, h])
