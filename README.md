@@ -6,6 +6,14 @@
 
 - wsl : [링크](https://www.notion.so/freshmea/WSL-windows-subsystem-for-linux-232123060ee780e79964ec56e36b5c18?source=copy_link)
 
+## WSL 설치
+
+```shellshell
+
+wsl --install
+wsl --set-default-version 2
+```
+
 ## usbipd
 
 ```shell
