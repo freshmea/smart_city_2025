@@ -1,13 +1,10 @@
 # uv add mediapipe
 import cv2
 import numpy as np
-
-# import Handpose from mediapipe
-from mediapipe.python.solutions.hands import Hands
+from mediapipe import MPHandPose, MPPalmDet
 
 
 def main():
-
     pass
 
 if __name__ == "__main__":
