@@ -29,10 +29,10 @@ def main():
         # plot keypoints
         annotated_frame = results[0].plot()  # type: ignore
         for res in results[0]:
+            # print("res.keypoints:", res.keypoints)  # type: ignore
             keypoints = res.keypoints.xy.cpu().numpy()  # type: ignore
-            if keypoints.shape[0] < 4:
-                continue
-            print("keypoints left_eye:", keypoints[1], "right_eye:", keypoints[2])  # type: ignore
+            if keypoints.shape[0] > 0 and keypoints.shape[0][0] >= 3:
+                print("keypoints left_eye:", keypoints[0][1], "right_eye:", keypoints[0][2])  # type: ignore
         img = annotated_frame
         cv2.putText(img, f"FPS: {tm.getFPS():.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         cv2.imshow("video", img)
