@@ -56,6 +56,7 @@ def main():
     app = initialize_face_analysis()
 
     cap = cv2.VideoCapture(CAMERA_ID)
+    cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
     if not cap.isOpened():
         print(f"오류: 카메라({CAMERA_ID})를 열 수 없습니다.")
         return
@@ -74,33 +75,32 @@ def main():
         if faces:
             # 가장 큰 얼굴을 대상으로 함
             main_face = sorted(faces, key=lambda x: (x.bbox[2] - x.bbox[0]) * (x.bbox[3] - x.bbox[1]), reverse=True)[0]
+            frames = [frame, wireframe_canvas]
+            names = ['Original Frame', 'Wireframe Canvas']
+            for _frame, name in zip(frames, names):
 
-            # 1. 3D 랜드마크 추출 및 와이어프레임 그리기
-            landmarks_3d = main_face.landmark_3d_68
-            draw_wireframe(frame, landmarks_3d) # 원본 영상 위에 그리기
-            # draw_wireframe(wireframe_canvas, landmarks_3d) # 별도 캔버스에 그리기
+                # 1. 3D 랜드마크 추출 및 와이어프레임 그리기
+                landmarks_3d = main_face.landmark_3d_68
+                draw_wireframe(_frame, landmarks_3d) # 원본 영상 위에 그리기
+                # draw_wireframe(wireframe_canvas, landmarks_3d) # 별도 캔버스에 그리기
 
-            # 2. 머리 자세(Head Pose) 추정 결과 가져오기
-            # pose는 (pitch, yaw, roll) 값을 반환 (단위: radian)
-            pitch, yaw, roll = main_face.pose
+                # 2. 머리 자세(Head Pose) 추정 결과 가져오기
+                # pose는 (pitch, yaw, roll) 값을 반환 (단위: radian)
+                pitch, yaw, roll = main_face.pose
 
-            # Radian을 Degree로 변환
-            pitch_deg = pitch * 180 / np.pi
-            yaw_deg = yaw * 180 / np.pi
-            roll_deg = roll * 180 / np.pi
+                # Radian을 Degree로 변환
+                pitch_deg = pitch * 180 / np.pi
+                yaw_deg = yaw * 180 / np.pi
+                roll_deg = roll * 180 / np.pi
 
-            # 3. 결과 시각화
-            bbox = main_face.bbox.astype(int)
-            cv2.rectangle(frame, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 255, 0), 2)
-
-            pose_text_y = bbox[1] - 10
-            cv2.putText(frame, f"Yaw: {yaw_deg:.2f}", (bbox[0], pose_text_y - 40), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
-            cv2.putText(frame, f"Pitch: {pitch_deg:.2f}", (bbox[0], pose_text_y - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
-            cv2.putText(frame, f"Roll: {roll_deg:.2f}", (bbox[0], pose_text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
-
-
-        cv2.imshow('Live Feed with Wireframe', frame)
-        # cv2.imshow('3D Wireframe View', wireframe_canvas)
+                # 3. 결과 시각화
+                bbox = main_face.bbox.astype(int)
+                cv2.rectangle(_frame, (bbox[0], bbox[1]), (bbox[2], bbox[3]), (0, 255, 0), 2)
+                pose_text_y = bbox[1] - 10
+                cv2.putText(_frame, f"Yaw: {yaw_deg:.2f}", (bbox[0], pose_text_y - 40), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
+                cv2.putText(_frame, f"Pitch: {pitch_deg:.2f}", (bbox[0], pose_text_y - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
+                cv2.putText(_frame, f"Roll: {roll_deg:.2f}", (bbox[0], pose_text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
+                cv2.imshow('Live Feed with Wireframe'+ name, _frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             print("프로그램을 종료합니다.")
