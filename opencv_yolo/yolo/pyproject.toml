@@ -7,5 +7,5 @@ requires-python = ">=3.10"
 dependencies = [
     "mediapipe>=0.10.21",
     "onnxruntime-gpu>=1.23.2",
-    "ultralytics>=8.3.220",
+    "ultralytics>=8.3.221",
 ]
