@@ -1,0 +1,301 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;132171999745728&quot;));">
+
+ 
+
+<div id="132169020425696" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Feature Statistics <span class="timestamp">목 10월 30 25, 15:37:08</span></h1><div class="content">
+<table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;"></th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Distribution</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Mean</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Mode</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Median</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Dispersion</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Min.</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Max.</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Missing</th>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">sulfur gas</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSUlEQVR4nO3ZwUkcYRiA4X8XkeQiyS1agqeEtQJvIaUE7CBgI6aGFBHwIIslpA0vMh7SgDL/svLyPOedj+8w7/yzu5tlWQbQtT32AsBhiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJOjr0AvAs/bx7vfv+bNe3+7/W3r59mTVvJSQ5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIO1l5/dPT85Q9xhjb7eb01EMHJlsb+dnHP1P2GGPsrj7fP1zPmgb85+SEOJFDnMghTuQQJ3KIEznErf0L7dft5ZQ9xhgXFx9mjYK3+vH9/PzLtDtw4qj1NsuyHHsH4IC8rkOcyCHubd/J9/v9gfYAXm+3273+w05yiPPDG8Q5ySFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcS9iNhxiRV8x4QAAAABJRU5ErkJggg=="></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-41.1063</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.002</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0022</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-4.82745</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.273</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">micro</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADdklEQVR4nO3YsWpTYQCG4RNT0aGDbtJBEDo5uMTNTZyF3oAIXofgKAheSpfi7OYWirMXUMTFSaTQHgdB3KzmD7UvzzMnHz+Elz/nLOZ5noCua5d9AGC7RA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnE7l30A/uzRk/fHH7+OWvv25WDUFFeCmxziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI29nw+wdPPww5xzRN+/u7b94+GLUG/LRp5O+OToacY5qm1cPbo6aAX/xdhziRQ5zIIU7kELfpizeutNeHn0ZN3bl14/nju6PWGGjTyF++uj/kHNM07e3dHDUV8+LZvZPP37exfHY+j5qaf1s6n+fTs9NRy8vF8vrSbfTvFvM87GcG/kOeySFO5BD3d4866/V6S+cALm61Wl38w25yiPPiDeLc5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuB+SjCybcd4IvgAAAABJRU5ErkJggg=="></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-3.92114</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">28</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-51.8815</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1154</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">ozon</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADTElEQVR4nO3YMWoVURSA4RtJYROwNKm1SZXwdmAR0CxFcAeCaxAsdSNJl0Cqh0uwT5MFWIxFwDph7uOFn++rZw6nmJ87MwfLsgyg69W+FwB2S+QQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BB3uO8F4EX4/OX3z19/Zk27u/1wfvZm1rSVnOQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQd7jy/k8XN1P2GGO8e3/0/cfZrGnAo7WRX1/dT9ljjPHw8HfWKOA/r+sQJ3KIEznErf0m//rtdMoeY4yTk9ezRsFzXX48Pn477QmcOGq9g2VZ9r0DsENe1yFO5BD3vG/y7Xa7oz2Ap9tsNk+/2EkOcX68QZyTHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQ9w+mvR6JWCvcpAAAAABJRU5ErkJggg=="></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-28.8872</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0308</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-5.79834</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.2274</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">nitrogen</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADTElEQVR4nO3aMWoVURSA4RtJkUawNFlABCvDK1MIduJShOwg4D7ErMUiJNUjS8gK3EAKx0JIncfcxws/39fP4RTzc2eGOVqWZQBdbw69ALBfIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7jjQy8Ar8L3q4dfN4+zpt3ffrn49G7WtJWc5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCHueOX1ny9/z1hjjDHOP7z9ebOZNQ34b23k93d/puwxxnh6+jtrFPDM4zrEiRziRA5xIoe4tR/ern98nLLHGOPs7GTWKNjVt6+np++n3YETR613tCzLoXcA9sjjOsSJHOJ2eyffbrd72gN4uc1mh39DneQQ58MbxDnJIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5x/wBunB672awURAAAAABJRU5ErkJggg=="></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-34.4768</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0096</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-5.29027</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.1735</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">monocarbon</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSElEQVR4nO3aQUocURRA0W8QdJiAA9slZGTorCAzETchOBKyg0A2oiF7ETJqsgTdSWXgBtT60uFyzrj68QZ9+VXVfbAsywC6Pux7AeB9iRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOIO970A/Bduv/+9u3+cNe3Pw7cv5x9nTVvJSQ5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIO1z5+d+/nmasMcYYJydHl1ebWdOAZ2sjv7neTdljjLH9+knkMJ3bdYgTOcSJHOJEDnEihziRQ9zan9B+/Pw8ZY8xxtnZ8axR8FqXF5vN6bRv4MRR6x0sy7LvHYB35HYd4kQOca97Jt/tpv2JFXiz7Xb78oud5BDnxRvEOckhTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnH/AO5yHAzviwCVAAAAAElFTkSuQmCC"></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-42.562</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.3</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.35</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-4.76213</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">6.16</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr><tr><td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="display: inline; vertical-align: middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKklEQVQ4jaWTPUvDUBiFn2uTxaVSRHQQTUALgqiDH2PXOusqLv4BXS04OAmlg4uz+ifEtVN1KIiIQ1uhBUWkiFgH8/E6NNbEkKS073YP5zz3vXAuDDnKf7jB2AExEiL1VRoXIUCF2XtQcyB6AsACHtdoLAKM/N3cTxhAdAXZbgY0TzSAPsKeG9EFzN4G/hnf3WKlXUWfmgjo5mWJ0eWFECwEUFqKz/ItM6dH/3QNpaWSAQCdSpXv5jOZ7c3Yp0QCAFqHRSYP9tAyY4MB3M4XrUKR6VJhMADAx3UZREjnc5EeLRYPNPePmb86x359i97AQdW9hiG2g9hOz2C333k5OSOdzyGO+ytbgqpBoMrGHZDto42WwMM6T0sBAHQr7SJmXFpQtQ3fZxp6fgB0qFkT4rD5dQAAAABJRU5ErkJggg=="> </td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">ultra micro</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;"><img style="max-height: 80px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAADh0lEQVR4nO3YsWpUURRA0RdJiCkkBAYxaVKJRKs4gqXoR/gBae2FgIKVf6Od1jZiIen8BU0hWMdqLAI2NiNzw8DOWtUr3hxOs7n3zcZisZiArhvrXgC4WiKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4zXUvwDrt7L4fNerh8d7nT09HTWMgJznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3OaKvz8/vxiyxzRNW1sbs9n2qGnApVUjPzz4MGSPaZrmj/a+fH02ahpwyXUd4kQOcate1+FfP3/9fvfxx6hpR3dvPXk8GzXtGhI5430/v3j59tuoaSfPD0W+Ctd1iBM5xIkc4lb9Jn/95v6QPaZpOji4OWoUS3p1ejRq1P7+zt/nO7e3T1/cGzX5+MHuqFHX08ZisVj3DsAVcl2HOJFD3P99k5+dnV3RHsDy5vP58i87ySHOH28Q5ySHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcT9AU+TJ2faCpf5AAAAAElFTkSuQmCC"></td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-27.7531</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">14</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-7.6586</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-999</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">584</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0 (0 %)</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="132171999739280" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">목 10월 30 25, 16:08:52</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 5-fold Cross validation<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MSE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">RMSE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MAE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MAPE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">R2</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Random Forest</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18790.261</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">137.078</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44.328</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18524579783819996.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.542</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18524.216</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">136.104</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">43.327</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">13686335366490292.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.549</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">156822.583</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">396.008</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">391.151</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">151730749993629312.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.820</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Gradient Boosting</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">16712.038</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">129.275</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">35.450</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">6315759665629468.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.593</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="132171999376816" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Random Forest <span class="timestamp">목 10월 30 25, 16:09:19</span></h1><div class="content">
+<ul><b>Name:</b> Random Forest<br></ul><h2>Model parameters</h2><ul><b>Number of trees:</b> 10<br><b>Maximal number of considered features:</b> unlimited<br><b>Replicable training:</b> No<br><b>Maximal tree depth:</b> unlimited<br><b>Stop splitting nodes with maximum instances:</b> 5<br></ul><h2>Data</h2><ul><b>Data instances:</b> 100000<br><b>Features:</b> sulfur gas, ozon, nitrogen, monocarbon, ultra micro<br><b>Target:</b> micro<br></ul></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="132171999745728" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">목 10월 30 25, 16:09:26</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 5-fold Cross validation<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MSE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">RMSE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MAE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MAPE</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">R2</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Random Forest</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18790.261</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">137.078</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44.328</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18524579783819996.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.542</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">18524.216</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">136.104</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">43.327</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">13686335366490292.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.549</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">156822.583</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">396.008</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">391.151</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">151730749993629312.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-2.820</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Gradient Boosting</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">16712.038</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">129.275</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">35.450</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">6315759665629468.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.593</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div></body></html>

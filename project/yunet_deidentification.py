@@ -39,7 +39,7 @@ MODEL_PATH = "/home/aa/smart_city_2025/data/face_detection_yunet_2023mar.onnx"
 BACKEND_TARGET_INDEX = 0
 
 # 4) 검출 하이퍼파라미터
-CONF_THRESHOLD = 0.7            # 낮출수록 더 많이 잡지만 오검출 증가
+CONF_THRESHOLD = 0.9            # 낮출수록 더 많이 잡지만 오검출 증가
 NMS_THRESHOLD  = 0.3
 TOP_K          = 5000
 
