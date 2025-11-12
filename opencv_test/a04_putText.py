@@ -19,7 +19,9 @@ def main():
         a = (a + 5) % 150
         a += 1
         text = f"Frame {int(cap.get(cv2.CAP_PROP_POS_FRAMES))} 티비 정보"
-        cv2.putText(black_clone, text, (50, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        # cv2.putText(black_clone, text, (50, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        text_sprite = TextSprite(50, 50, text, font_size=24, color=(255, 255, 255, 255), font_path=folder_path +"NanumGothic-Regular.ttf")
+        text_sprite.draw(black_clone)
         if cv2.waitKey(delay) == 27:
             break
         cv2.imshow("black window", black_clone)
