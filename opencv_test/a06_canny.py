@@ -4,8 +4,13 @@ import numpy as np
 # pip install opencv-python
 
 def main():
-    folder_path = "/home/aa/smart_city_2025/data/"
-    cap = cv2.VideoCapture(folder_path + "vtest.avi")
+    # folder_path = "/home/aa/smart_city_2025/data/"
+    # cap = cv2.VideoCapture(folder_path + "vtest.avi")
+    cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        print("Error opening video stream or file")
+        return
+    cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
     fps = 30
     delay = int(1000 / fps)
     a = 0
