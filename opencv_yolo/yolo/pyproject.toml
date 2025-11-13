@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "fastapi>=0.121.2",
     "mediapipe>=0.10.21",
     "onnxruntime-gpu>=1.23.2",
     "ultralytics>=8.3.221",
+    "uvicorn>=0.38.0",
 ]
