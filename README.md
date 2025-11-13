@@ -2,6 +2,8 @@
 
 세종에서 진행되는 스마트시티 수업에 대한 내용
 
+- 주제 공유 페이지 [링크](https://docs.google.com/spreadsheets/d/1AOgyMP23S_DqQ4h7Dp1dI4FhGuwIsGnQ_CCDm4Jbtlc/edit?usp=sharing)
+
 ## notion 페이지
 
 - wsl : [링크](https://www.notion.so/freshmea/WSL-windows-subsystem-for-linux-232123060ee780e79964ec56e36b5c18?source=copy_link)
