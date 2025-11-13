@@ -11,12 +11,17 @@ from ultralytics import YOLO
 def main():
     folder_path = "/home/aa/smart_city_2025/data/Cat/"
     print(torch.cuda.is_available())
-    model = YOLO("yolov8n.pt")
+    # model = YOLO("yolov8n.pt")
+    model = YOLO("yolo12m.pt")
     path = folder_path + "cat.4.jpg"
     img = cv2.imread(path)
     results = model.predict(img, verbose=True)
     res = results[0]
+
+    # yolo 제공 그리기
     # annotated_frame = res.plot()
+
+    # 사용자가 데이터를 사용해서 그리기
     pt1 = res.boxes.xyxy[0].cpu().numpy().astype(int)[:2]
     pt2 = res.boxes.xyxy[0].cpu().numpy().astype(int)[2:]
     cv2.rectangle(img, pt1, pt2, (0, 255, 0), 2)
