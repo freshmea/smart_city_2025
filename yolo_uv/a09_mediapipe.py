@@ -44,7 +44,7 @@ parser.add_argument('--vis', '-v', action='store_true',
 args = parser.parse_args()
 
 
-def visualize(image, hands, print_result=False):
+def visualize(image, hands, print_result=True):
     display_screen = image.copy()
     display_3d = np.zeros((400, 400, 3), np.uint8)
     cv.line(display_3d, (200, 0), (200, 400), (255, 255, 255), 2)
