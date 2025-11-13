@@ -16,6 +16,9 @@ def main():
     img = cv2.imread(path)
     results = model.predict(img, verbose=True)
     res = results[0]
+    print(type(results))
+    print(results)
+    print(results[0].boxes)
     annotated_frame = res.plot()
     cv2.imshow("YOLOv8 Detection", annotated_frame)
     cv2.waitKey(0)  # ms
