@@ -26,16 +26,19 @@ def main():
             break
         # yolo inference
         results = model.predict(img, verbose=False)  # type: ignore
-        # plot keypoints
+        # if results is None or len(results) == 0:
+        #     continue
+        # # plot keypoints
         annotated_frame = results[0].plot()  # type: ignore
-        for res in results[0]:
-            # print("res.keypoints:", res.keypoints)  # type: ignore
-            keypoints = res.keypoints.xy.cpu().numpy()  # type: ignore
-            if keypoints.shape[0] > 0 and keypoints.shape[0][0] >= 3:
-                print("keypoints left_eye:", keypoints[0][1], "right_eye:", keypoints[0][2])  # type: ignore
-        img = annotated_frame
-        cv2.putText(img, f"FPS: {tm.getFPS():.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        # for res in results[0]:
+        #     # print("res.keypoints:", res.keypoints)  # type: ignore
+        #     keypoints = res.keypoints.xy.cpu().numpy()  # type: ignore
+        #     if keypoints.shape[0] > 0 and keypoints.shape[0][0] >= 3:
+        #         print("keypoints left_eye:", keypoints[0][1], "right_eye:", keypoints[0][2])  # type: ignore
+        # img = annotated_frame
+        # cv2.putText(img, f"FPS: {tm.getFPS():.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         cv2.imshow("video", img)
+        cv2.imshow("YOLOv8 Pose", annotated_frame)
         tm.stop()
         print("time:", tm.getTimeSec(), "fps:", tm.getFPS(), "ticks:", tm.getTimeTicks())
 
@@ -44,7 +47,8 @@ def main():
         if elapsed_ticks < target_ticks_per_frame:
             wait_ticks = target_ticks_per_frame - elapsed_ticks
             wait_ms = int(wait_ticks / cv2.getTickFrequency() * 1000)
-            if cv2.waitKey(wait_ms) == 27:
+            # if cv2.waitKey(wait_ms) == 27:
+            if cv2.waitKey(1) == 27:
                 break
         else:
             if cv2.waitKey(1) == 27:
