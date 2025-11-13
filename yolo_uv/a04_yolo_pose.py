@@ -30,8 +30,8 @@ def main():
         #     continue
         # # plot keypoints
         annotated_frame = results[0].plot()  # type: ignore
-        # for res in results[0]:
-        #     # print("res.keypoints:", res.keypoints)  # type: ignore
+        for res in results[0]:
+            print("res.keypoints:", res.keypoints)  # type: ignore
         #     keypoints = res.keypoints.xy.cpu().numpy()  # type: ignore
         #     if keypoints.shape[0] > 0 and keypoints.shape[0][0] >= 3:
         #         print("keypoints left_eye:", keypoints[0][1], "right_eye:", keypoints[0][2])  # type: ignore
