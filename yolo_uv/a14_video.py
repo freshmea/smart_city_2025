@@ -26,6 +26,7 @@ def gen_frames():
         # =========================
 
         # JPEG로 인코딩
+        frame = cv2.Canny(frame, 100, 200)  # 예: Canny 엣지 검출
         ret, buffer = cv2.imencode('.jpg', frame)
         if not ret:
             continue
