@@ -1,12 +1,14 @@
 import cv2
 from ultralytics import YOLO
 
-
+image_path = "/tmp/current_frame.jpg"
 def main():
     vtest = 0
     cap = cv2.VideoCapture(vtest)
     cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+    # rtsp_url = "rtsp://210.99.70.120:1935/live/cctv005.stream"
 
+    cap = cv2.VideoCapture(vtest)
     fps = cap.get(cv2.CAP_PROP_FPS)
     print("fps:", fps)
     model = YOLO("yolov8n.pt")
@@ -19,6 +21,7 @@ def main():
         if not ret:
             break
         cv2.imshow("video", annotated_frame)
+        # cv2.imwrite(image_path, annotated_frame)
         if cv2.waitKey(3) == 27: # ms fps
             break
     cap.release()
