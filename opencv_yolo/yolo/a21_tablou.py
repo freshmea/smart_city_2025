@@ -130,6 +130,7 @@ def index():
         <div class="tab-menu">
           <button class="tab-button active" onclick="showTab('video-tab')">📹 영상 재생</button>
           <button class="tab-button" onclick="showTab('tableau-tab')">📊 Tableau 대시보드</button>
+          <button class="tab-button" onclick="showTab('orange-tab')">🍊 Orange Dashboard</button>
         </div>
 
         <!-- 영상 탭 -->
@@ -153,6 +154,35 @@ def index():
           </div>
         </div>
 
+        <!-- Orange Dashboard 탭 -->
+        <div id="orange-tab" class="tab-content">
+          <h1 style="text-align: center;">Orange Dashboard</h1>
+          <div class="tableau-container">
+            <div class='tableauPlaceholder' id='viz1763075546152' style='position: relative'>
+              <noscript>
+                <a href='#'>
+                  <img alt=' ' src='https://public.tableau.com/static/images/or/orange_17630753001540/1/1_rss.png' style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='orange_17630753001540&#47;1' />
+                <param name='tabs' value='yes' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/or/orange_17630753001540/1/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='ko-KR' />
+              </object>
+            </div>
+          </div>
+        </div>
+
         <script>
           function showTab(tabId) {{
             // 모든 탭 콘텐츠 숨기기
@@ -172,6 +202,27 @@ def index():
 
             // 해당 버튼 활성화
             event.target.classList.add('active');
+
+            // Orange 탭이 선택되었을 때 Tableau 스크립트 로드
+            if (tabId === 'orange-tab') {{
+              loadOrangeDashboard();
+            }}
+          }}
+
+          function loadOrangeDashboard() {{
+            // 이미 로드되었으면 중복 로드 방지
+            if (document.getElementById('orange-tableau-script')) {{
+              return;
+            }}
+
+            var divElement = document.getElementById('viz1763075546152');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='100%';
+            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.id = 'orange-tableau-script';
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
           }}
         </script>
       </body>
