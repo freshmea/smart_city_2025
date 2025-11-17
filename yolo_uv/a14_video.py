@@ -1,16 +1,22 @@
 # uv add fastapi uvicorn
 
 # main.py
+import time
+from tkinter import Y
+
 import cv2
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, StreamingResponse
+from ultralytics import YOLO
 
 app = FastAPI()
 
 # 카메라 대신, 이미 처리된 frame 을 만들고 싶다면
 # 아래 cap 부분 대신, 직접 frame을 만드는 코드로 바꾸면 됩니다.
-cap = cv2.VideoCapture(0)  # 0: 기본 웹캠. 필요 없으면 제거 가능.
-cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+# cap = cv2.VideoCapture(0)  # 0: 기본 웹캠. 필요 없으면 제거 가능.
+# cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+cap = cv2.VideoCapture("/home/aa/smart_city_2025/data/vtest.avi")
+model = YOLO('yolov8n.pt')
 
 def gen_frames():
     while True:
@@ -26,13 +32,20 @@ def gen_frames():
         # =========================
 
         # JPEG로 인코딩
-        frame = cv2.Canny(frame, 100, 200)  # 예: Canny 엣지 검출
-        ret, buffer = cv2.imencode('.jpg', frame)
+
+        # frame = cv2.Canny(frame, 100, 200)  # 예: Canny 엣지 검출
+
+        results = model(frame)[0]
+        annotated_frame = results.plot()
+        ret, buffer = cv2.imencode('.jpg', annotated_frame)
+
+        # ret, buffer = cv2.imencode('.jpg', frame)
+
         if not ret:
             continue
 
         frame_bytes = buffer.tobytes()
-
+        time.sleep(0.1)  # 프레임 속도 조절 (선택 사항)
         # MJPEG 포맷으로 yield
         yield (
             b"--frame\r\n"
